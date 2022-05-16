@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  /*background: linear-gradient(142deg, rgba(124,118,255,1) 10%, rgba(163,230,255,1) 100%);*/
+  background-color: rgb(244, 246, 248);
+  min-height: 98.4vh;
+}
+
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
