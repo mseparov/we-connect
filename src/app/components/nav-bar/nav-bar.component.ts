@@ -22,7 +22,6 @@ export class NavBarComponent implements OnInit {
       
         this.data.setDarkModeChange(this.isDisplay);
     
-      
     }
 
     constructor(private router: Router, private data: DataService) {
@@ -43,6 +42,9 @@ export class NavBarComponent implements OnInit {
       }
       if(this.href.includes("/login")){
         this.urlCheck="login"
+      }
+      if(this.href.includes("/forum")){
+        this.urlCheck="forum"
       }
     });
   }

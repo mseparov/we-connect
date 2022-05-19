@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { ForumComponent } from './components/forum/forum.component';
 
 
 const appRoutes: Routes = [
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
    {path: "", redirectTo: "/home", pathMatch: "full"},
    {path: 'about', component: AboutComponent},
    {path: 'signup', component: SignupComponent},
-   {path: 'login', component: LoginComponent}
+   {path: 'login', component: LoginComponent},
+   {path: 'forum', component: ForumComponent}
 ]
 
 @NgModule({
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
     AboutComponent,
     SignupComponent,
     LoginComponent,
+    ForumComponent,
   ],
   imports: [
     BrowserModule, 
