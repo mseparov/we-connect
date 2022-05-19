@@ -1,1 +1,11 @@
-<h1>Start</h1>
+<div class="main-body">
+
+    <div class="nav-bar-container">
+        <app-nav-bar></app-nav-bar>
+    </div>
+
+    <div class="main-container" [ngClass]="{'darkMode': darkModeCheck == true}">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>
