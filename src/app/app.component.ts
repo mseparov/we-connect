@@ -29,6 +29,7 @@ export class AppComponent implements OnInit{
         }
       })
 
+      //setting login change
       if(localStorage.getItem('user') !== null){
         this.data.setLoginChange(true)
       }

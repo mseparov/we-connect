@@ -169,6 +169,20 @@ color: white;
 }
 
 .logout{
+  position: absolute;
   height: 50px;
-  margin-left: 30px;
+  right: 7.5vw;
+  width: 3vw;
+}
+
+.login{
+  position: absolute;
+  right: 7.5vw;
+  width: 3vw;
+}
+
+.signup{
+  position: absolute;
+  right: 13vw;
+  width: 3vw;
 }

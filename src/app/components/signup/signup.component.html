@@ -1,8 +1,9 @@
-<div>
-
-    <h2>Sign Up</h2>
-    <input type="text" #emailSignup>
-    <input type="text" #passwordSignup>
-    <button (click)="onSignup(emailSignup.value, passwordSignup.value)" autocomplete="on">Sign up</button>
-
+<div class="signup">
+    <div class="colorSignup">
+        <h1>Sign up</h1>
+        <h4>Please fill in this form to create an account :)</h4>
+        <input type="email" #emailSignup id="emailField" aria-describedby="emailHelp" placeholder="name@example.com">
+        <input type="password" id="passwordField" #passwordSignup placeholder="Password">
+        <button (click)="onSignup(emailSignup.value, passwordSignup.value)" class="submit" autocomplete="on">Sign up</button>
+    </div>
 </div>

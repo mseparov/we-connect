@@ -18,6 +18,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ForumComponent } from './components/forum/forum.component';
 import { FirebaseService } from './services/firebase.service';
 import { AuthGuard } from './components/routing/auth.guard';
+import { JobPostingComponent } from './components/job-posting/job-posting.component';
 
 
 const appRoutes: Routes = [
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
    {path: 'about', component: AboutComponent},
    {path: 'signup', component: SignupComponent, canActivate: [AuthGuard]},
    {path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
-   {path: 'forum', component: ForumComponent}
+   {path: 'forum', component: ForumComponent},
+   {path: 'job-posting', component: JobPostingComponent}
 ]
 
 @NgModule({
@@ -38,6 +40,7 @@ const appRoutes: Routes = [
     SignupComponent,
     LoginComponent,
     ForumComponent,
+    JobPostingComponent,
   ],
   imports: [
     BrowserModule, 

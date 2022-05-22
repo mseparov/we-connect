@@ -1,0 +1,36 @@
+.login{
+    background:rgb(174, 193, 228);
+    margin-top: 135px;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .colorLogin{
+    background-color: rgb(209, 220, 243);
+    border-radius: 2px;
+    padding: 10px;
+  }
+
+  #emailField{
+    height: 2vh;
+    width: 12vw;
+  }
+
+  #passwordField{
+    height: 2vh;
+    width: 12vw;
+}
+
+.submit{
+    width: 3vw;
+    height: 1.3vw;
+    background-color: rgb(166, 182, 211);
+    cursor: pointer;
+    border: 0px;
+}

@@ -1,8 +1,9 @@
-<div>
-    
-    <h2>Log In</h2>
-    <input type="text" #email>
-    <input type="text" #password>
-    <button (click)="onLogin(email.value, password.value)" autocomplete="on">Log In</button>
-
+<div class="login">
+    <div class="colorLogin">
+        <h1>Log In</h1>
+        <h3>Welcome back!</h3>
+        <input type="email" #email id="emailField" aria-describedby="emailHelp" placeholder="name@example.com">
+        <input type="password" id="passwordField" #password placeholder="Password">
+        <button (click)="onLogin(email.value, password.value)" class="submit" autocomplete="on">Log In</button>
+    </div>
 </div>

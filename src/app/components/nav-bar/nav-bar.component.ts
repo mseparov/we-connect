@@ -47,6 +47,9 @@ export class NavBarComponent implements OnInit {
       if(this.href.includes("/forum")){
         this.urlCheck="forum"
       }
+      if(this.href.includes("/job-posting")){
+        this.urlCheck="job-posting"
+      }
     });
   }
 

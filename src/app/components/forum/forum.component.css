@@ -1,0 +1,8 @@
+.main-container-forum{
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+    height: 94.4vh;
+    background-color: rgb(232, 235, 248);
+    border-radius: 5px;
+}
