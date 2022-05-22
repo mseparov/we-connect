@@ -1,1 +1,8 @@
-<p>signup works!</p>
+<div>
+
+    <h2>Sign Up</h2>
+    <input type="text" #emailSignup>
+    <input type="text" #passwordSignup>
+    <button (click)="onSignup(emailSignup.value, passwordSignup.value)" autocomplete="on">Sign up</button>
+
+</div>

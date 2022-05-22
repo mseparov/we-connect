@@ -2,9 +2,10 @@
     <div class="nav-bar-buttons">
         <a routerLink="home" class="nav-bar-button" [ngClass]= "{'current': urlCheck === 'home'}">Home</a>
         <a routerLink="about" class="nav-bar-button" [ngClass]= "{'current': urlCheck === 'about'}">About</a>
-        <a routerLink="signup" class="nav-bar-button" [ngClass]= "{'current': urlCheck === 'signup'}">Signup</a>
-        <a routerLink="login" class="nav-bar-button" [ngClass]= "{'current': urlCheck === 'login'}">Login</a>
         <a routerLink="forum" class="nav-bar-button" [ngClass]= "{'current': urlCheck === 'forum'}">Forum</a>
+        <a routerLink="signup" class="nav-bar-button" [ngClass]= "{'current': urlCheck === 'signup'}" *ngIf="!this.data.isLoggedIn.value">Signup</a>
+        <a routerLink="login" class="nav-bar-button" [ngClass]= "{'current': urlCheck === 'login'}" *ngIf="!this.data.isLoggedIn.value">Login</a>
+        <button (click)="logout()"  class="nav-bar-button logout" *ngIf="this.data.isLoggedIn.value">Logout</button>
 
 
         <div class="dark">

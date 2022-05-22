@@ -10,14 +10,18 @@ import {Router} from "@angular/router";
 export class DataService{
     
     constructor(private router: Router){
-   
       }
 
     public darkModeChange = new BehaviorSubject<boolean>(false);
+    public isLoggedIn = new BehaviorSubject<boolean>(false);
 
     setDarkModeChange(selection: any){
       this.darkModeChange.next(selection);
   }
+
+  setLoginChange(selection: any){
+    this.isLoggedIn.next(selection);
+}
 
   
 }

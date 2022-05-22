@@ -167,3 +167,8 @@ a{
 background: rgb(118, 73, 148);
 color: white;
 }
+
+.logout{
+  height: 50px;
+  margin-left: 30px;
+}

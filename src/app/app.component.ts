@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 import { RouterOutlet } from "@angular/router";
 import { DataService } from "./components/helper-components/data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit{
     // default dark (false) or light mode (true)
     darkModeCheck:boolean = true;
 
-    constructor(private data: DataService){ 
+    constructor(private data: DataService, private router: Router){ 
     }
   
     ngOnInit(){
@@ -27,7 +28,14 @@ export class AppComponent implements OnInit{
          document.body.style.background = "rgb(244, 246, 248)"
         }
       })
-    
+
+      if(localStorage.getItem('user') !== null){
+        this.data.setLoginChange(true)
+      }
+      else{
+        this.data.setLoginChange(false)
+      }
+
     }
 
 }

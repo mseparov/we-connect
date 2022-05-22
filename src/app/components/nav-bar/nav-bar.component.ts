@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { DataService } from "../helper-components/data.service";
 import {Router} from "@angular/router";
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -24,11 +25,11 @@ export class NavBarComponent implements OnInit {
     
     }
 
-    constructor(private router: Router, private data: DataService) {
+    constructor(private router: Router, public data: DataService, public firebaseService: FirebaseService) {
 
       // additional buttons colored page indicator
       router.events.subscribe((val) => {
-  
+
         this.href = window.location.href;
       
       if(this.href.includes("/home")){
@@ -50,6 +51,15 @@ export class NavBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
+  }
+
+  logout(){
+    this.firebaseService.logout()
+    this.data.setLoginChange(false)
+    console.log(this.data.isLoggedIn.value)
+    console.log("Logged out.")
+    this.router.navigate(["/home"])
   }
 
 }
