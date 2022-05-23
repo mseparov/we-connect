@@ -1,8 +1,20 @@
 .main-container-home{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
     width: 90vw;
-    height: 94.4vh;
+    height: 93vh;
     background-color: rgb(232, 235, 248);
     border-radius: 5px;
+    text-align: center;
+    overflow: scroll;
+    gap: 1.2%;
+}
+
+.jobs-container{
+    margin-top: 15px;
+    background-color: rgb(194, 196, 223);
+    width: 60vw;
+    border-radius: 7px;
 }

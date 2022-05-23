@@ -1,5 +1,27 @@
 <div class="main-container-home">
+   
+        <div class="jobs-container" *ngFor="let job of jobs">
 
-    <p>Main Page</p>
+            <div>
+                <p>{{job.title}}</p>
+            </div>
+
+            <div>
+                <p>{{job.description}}</p>
+            </div>
+
+            <div>
+                <p>{{job.email}}</p>
+            </div>
+
+            <div>
+                <p>{{job.company}}</p>
+            </div>
+
+            <div>
+                <p>{{job.telephone}}</p>
+            </div>
+ 
+        </div> 
 
 </div>
