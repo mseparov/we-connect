@@ -28,12 +28,18 @@ export class SignupComponent implements OnInit {
   }
 
   async onSignup(email:string, password:string){
-    await this.firebaseService.signup(email, password)
-    if(this.firebaseService.isLoggedIn){
-      this.data.setLoginChange(true)
-      this.isLoggedIn = this.data.isLoggedIn.value;
-      console.log(this.data.isLoggedIn.value)
-    }
-  }
+    await this.firebaseService.signup(email, password).then(()=>{
+      if(this.firebaseService.isLoggedIn){
+        this.data.setLoginChange(true)
+        this.isLoggedIn = this.data.isLoggedIn.value;
+        console.log(this.data.isLoggedIn.value)
+      }
+      })
+      .catch((e)=>{
+        console.log("Signup Failed.", e)
+        alert("Something went wrong. Do you already have an account associated with this email?.")
+      })
+}
+
 
 }

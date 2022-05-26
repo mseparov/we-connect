@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { appendFile } from 'fs';
+import { Observable } from 'rxjs';
+import { DataService } from '../helper-components/data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,18 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  jobs:any = [
-  {"title": "title", "description": "description", "email": "email", "company": "company", "telephone": "0123456789"},
-  {"title": "title", "description": "description", "email": "email", "company": "company", "telephone": "0123456789"},
-  {"title": "title", "description": "description", "email": "email", "company": "company", "telephone": "0123456789"},
-  {"title": "title", "description": "description", "email": "email", "company": "company", "telephone": "0123456789"},
-  {"title": "title", "description": "description", "email": "email", "company": "company", "telephone": "0123456789"},
-  {"title": "title", "description": "description", "email": "email", "company": "company", "telephone": "0123456789"}
-]
+  jobs:any = [];
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore, private firestoreData: DataService) { 
+
+  }
+  
 
   ngOnInit(): void {
+
+    // get firestore data from data.service and put it into a local array
+    this.firestoreData.fireStoreData.subscribe((data)=>{
+      
+      this.jobs = data;
+
+    });
+    
+    console.log(this.jobs);
+
   }
+
 
 }

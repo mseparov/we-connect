@@ -8,7 +8,7 @@
         <div>
             <label>Job Title:</label>
             <div class="break"></div>
-            <textarea name="Text1" cols="40" rows="5" class="job-title"></textarea>
+            <textarea name="Text1" cols="40" rows="5" class="job-title" [(ngModel)]="job_title"></textarea>
         </div>
 
         <div class="break"></div>
@@ -16,7 +16,7 @@
         <div>
             <label>Job Description:</label>
             <div class="break"></div>
-            <textarea name="Text1" cols="40" rows="5" class="job-description"></textarea>
+            <textarea name="Text1" cols="40" rows="5" class="job-description" [(ngModel)]="job_description"></textarea>
         </div>
 
         <div class="break"></div>
@@ -26,15 +26,15 @@
             <label>E-mail &nbsp;</label>
             <label>Phone &emsp;</label>
             <div class="break"></div>
-            <input name="Text1" cols="40" rows="5" class="contact">
-            <input name="Text1" cols="40" rows="5" class="contact">
-            <input name="Text1" cols="40" rows="5" class="contact">
+            <input [(ngModel)]="company_name" cols="40" rows="5" class="contact">
+            <input [(ngModel)]="company_email" cols="40" rows="5" class="contact">
+            <input [(ngModel)]="company_phone" cols="40" rows="5" class="contact">
         </div>
 
         <div class="break"></div>
 
         <div class="submit">
-            <button class="submit">Post Job</button>
+            <button class="submit" (click)="submit()">Post Job</button>
         </div>
 
     </div> 

@@ -8,13 +8,22 @@
     background-color: rgb(232, 235, 248);
     border-radius: 5px;
     text-align: center;
-    overflow: scroll;
-    gap: 1.2%;
+    overflow: hidden;
 }
 
 .jobs-container{
-    margin-top: 15px;
-    background-color: rgb(194, 196, 223);
+    background-color: rgb(146, 140, 180);
+    border-radius: 15px;
+    border: 2px solid rgb(154, 159, 167);
+    overflow: scroll;
+}
+
+.jobs{
+    background-color: rgb(207, 208, 235);
     width: 60vw;
-    border-radius: 7px;
+    word-break: break-all;
+}
+
+.jobs-container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }

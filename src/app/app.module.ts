@@ -8,6 +8,7 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -19,6 +20,8 @@ import { ForumComponent } from './components/forum/forum.component';
 import { FirebaseService } from './services/firebase.service';
 import { AuthGuard } from './components/routing/auth.guard';
 import { JobPostingComponent } from './components/job-posting/job-posting.component';
+import { getFirestore } from 'firebase/firestore';
+import { environment } from 'src/environments/environment';
 
 
 const appRoutes: Routes = [
@@ -47,16 +50,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, {enableTracing: false}), 
     MatIconModule, 
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(
-      {
-        apiKey: "AIzaSyCkNf-PQwwsQ8nEHv5Ubhz6BJuHhvt1DVg",
-        authDomain: "we-connect-980df.firebaseapp.com",
-        projectId: "we-connect-980df",
-        storageBucket: "we-connect-980df.appspot.com",
-        messagingSenderId: "555353038171",
-        appId: "1:555353038171:web:07c915e276709c2bff0e7e"
-      }
-    )
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    FormsModule
   ],
   providers: [FirebaseService, AuthGuard],
   bootstrap: [AppComponent]

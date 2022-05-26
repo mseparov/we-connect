@@ -28,12 +28,18 @@ export class LoginComponent implements OnInit {
   }
 
   async onLogin(email:string, password:string){
-    await this.firebaseService.login(email, password)
-    if(this.firebaseService.isLoggedIn){
-      this.data.setLoginChange(true)
-      this.isLoggedIn = this.data.isLoggedIn.value;
-      console.log(this.data.isLoggedIn.value)
-    }
+    await this.firebaseService.login(email, password).then(()=>{
+      if(this.firebaseService.isLoggedIn){
+        this.data.setLoginChange(true)
+        this.isLoggedIn = this.data.isLoggedIn.value;
+        console.log(this.data.isLoggedIn.value)
+      }
+      })
+      .catch((e)=>{
+        console.log("Login Failed.", e)
+        alert("Something went wrong. Check if your password or email is right.")
+      })
   }
+
 
 }

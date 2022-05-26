@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
 })
 export class FirebaseService {
 
-  isLoggedIn = false
+  isLoggedIn = false;
   urlCheck: string = "";
   href: string = "";
 
@@ -57,7 +57,19 @@ export class FirebaseService {
       console.log("Successfully registered: ", res.user?.email)
       this.router.navigate(["/home"])
     }).catch((error)=>{
-      console.error("Failed to register", error);    
+      console.error("Failed to register", error);
+      if (error.code == "auth/email-already-in-use") {
+        alert("The email address is already in use.");
+    } else if (error.code == "auth/invalid-email") {
+        alert("The email address is not valid.");
+    } else if (error.code == "auth/operation-not-allowed") {
+        alert("Operation not allowed.");
+    } else if (error.code == "auth/weak-password") {
+        alert("The password is too weak.");
+    }
+      else{
+      alert("Something went wrong.")
+    }
     })
   }
   else{
@@ -73,5 +85,6 @@ export class FirebaseService {
     this.firebaseAuth.signOut()
     localStorage.removeItem("user")
   }
+
 
 }

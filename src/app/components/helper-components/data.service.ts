@@ -14,6 +14,7 @@ export class DataService{
 
     public darkModeChange = new BehaviorSubject<boolean>(false);
     public isLoggedIn = new BehaviorSubject<boolean>(false);
+    public fireStoreData = new BehaviorSubject<boolean>(false);
 
     setDarkModeChange(selection: any){
       this.darkModeChange.next(selection);
@@ -21,6 +22,10 @@ export class DataService{
 
   setLoginChange(selection: any){
     this.isLoggedIn.next(selection);
+}
+
+setFireStoreData(selection: any){
+  this.fireStoreData.next(selection);
 }
 
   
