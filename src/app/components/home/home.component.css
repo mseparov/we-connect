@@ -29,6 +29,46 @@
 }
 
 .description:hover{
-    background: rgb(184, 186, 219);;
+    background: rgb(184, 186, 219);
 }
 
+.font-btn-plus{
+    background-color: rgb(220, 221, 238);
+    position: absolute;
+    top: 5px;
+    left: 8vw;
+    z-index: 99;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+}
+
+.font-btn-minus{
+    background-color: rgb(220, 221, 238);
+    position: absolute;
+    top: 5px;
+    left: 5vw;
+    z-index: 99;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+}
+
+.font-btn-plus:hover{
+    background-color: rgb(184, 186, 219);
+}
+.font-btn-minus:hover{
+    background-color: rgb(184, 186, 219);
+}
+
+@media only screen and (max-width: 1600px) {
+    .font-btn-plus{ 
+        left: 12vw;
+    }
+    
+    .font-btn-minus{
+        left: 5vw;
+    }
+  }

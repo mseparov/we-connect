@@ -2,7 +2,10 @@
    
     <div class="jobs-container">
 
-        <div class="jobs" *ngFor="let job of jobs">
+        <button class="font-btn-plus" (click)="IncreaseFontSize()">+</button>
+        <button class="font-btn-minus" (click)="DecreaseFontSize()">-</button>
+
+        <div class="jobs" [ngStyle]="{'font-size.px':fontSize}" *ngFor="let job of jobs">
 
             <div>
                 <p class="description title" (click)="speak('Job Title. ', job.job_title)">{{job.job_title}}</p>
@@ -27,7 +30,6 @@
             <div>
                 <p class="description timestamp" (click)="speak('Time posted. ', job.timestamp)">{{job.timestamp}}</p>
             </div>
- 
         </div> 
     
     </div>

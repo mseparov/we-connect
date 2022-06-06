@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   speech: any;
   speechData: any;
 
+  fontSize = 22;
+
   constructor(private firestore: AngularFirestore, private firestoreData: DataService) {
 
     this.speech = new Speech() // will throw an exception if not browser supported
@@ -72,6 +74,15 @@ export class HomeComponent implements OnInit {
       console.error("An error occurred: ", e);
     })
   }
+
+  IncreaseFontSize() {
+    if(this.fontSize<42)
+    this.fontSize += 2;
+   }
+   DecreaseFontSize() {
+    if(this.fontSize>16)
+    this.fontSize -=2;
+   }
 
   
 }
