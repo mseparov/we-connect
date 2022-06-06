@@ -27,3 +27,8 @@
 .jobs-container::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
+
+.description:hover{
+    background: rgb(184, 186, 219);;
+}
+

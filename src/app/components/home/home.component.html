@@ -5,27 +5,27 @@
         <div class="jobs" *ngFor="let job of jobs">
 
             <div>
-                <p>{{job.job_title}}</p>
+                <p class="description title" (click)="speak('Job Title. ', job.job_title)">{{job.job_title}}</p>
             </div>
 
             <div>
-                <p>{{job.job_description}}</p>
+                <p class="description desc" (click)="speak('Job Description. ', job.job_description)">{{job.job_description}}</p>
             </div>
 
             <div>
-                <p>{{job.company_email}}</p>
+                <p class="description email" (click)="speak('Company Email. ', job.company_email)">{{job.company_email}}</p>
             </div>
 
             <div>
-                <p>{{job.company_name}}</p>
+                <p class="description name" (click)="speak('Company Name. ', job.company_name)">{{job.company_name}}</p>
             </div>
 
             <div>
-                <p>{{job.company_phone}}</p>
+                <p class="description phone" (click)="speak('Company Phone. ', job.company_phone)">{{job.company_phone}}</p>
             </div>
 
             <div>
-                <p>{{job.timestamp}}</p>
+                <p class="description timestamp" (click)="speak('Time posted. ', job.timestamp)">{{job.timestamp}}</p>
             </div>
  
         </div> 
