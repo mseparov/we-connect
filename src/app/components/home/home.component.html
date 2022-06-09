@@ -8,27 +8,27 @@
         <div class="jobs" [ngStyle]="{'font-size.px':fontSize}" *ngFor="let job of jobs">
 
             <div>
-                <p class="description title" (click)="speak('Job Title. ', job.job_title)">{{job.job_title}}</p>
+                <p class="description title" (click)="speak('Job Title. ', job.job_title)"><span class="keyColor">Job Title:</span> {{job.job_title}}</p>
             </div>
 
             <div>
-                <p class="description desc" (click)="speak('Job Description. ', job.job_description)">{{job.job_description}}</p>
+                <p class="description desc" (click)="speak('Job Description. ', job.job_description)"><span class="keyColor">Job Description:</span> {{job.job_description}}</p>
             </div>
 
             <div>
-                <p class="description name" (click)="speak('Company Name. ', job.company_name)">{{job.company_name}}</p>
+                <p class="description name" (click)="speak('Company Name. ', job.company_name)"><span class="keyColor">Company Name:</span> {{job.company_name}}</p>
             </div>
 
             <div>
-                <p class="description email" (click)="speak('Company Email. ', job.company_email)">{{job.company_email}}</p>
+                <p class="description email" (click)="speak('Company Email. ', job.company_email)"><span class="keyColor">Company Email:</span> {{job.company_email}}</p>
             </div>
 
             <div>
-                <p class="description phone" (click)="speak('Company Phone. ', job.company_phone)">{{job.company_phone}}</p>
+                <p class="description phone" (click)="speak('Company Phone. ', job.company_phone)"><span class="keyColor">Company Phone:</span> {{job.company_phone}}</p>
             </div>
 
             <div>
-                <p class="description timestamp" (click)="speak('Time posted. ', job.timestamp)">{{job.timestamp}}</p>
+                <p class="description timestamp" (click)="speak('Time posted. ', job.timestamp)"><span class="keyColor">Time Posted:</span> {{job.timestamp}}</p>
             </div>
         </div> 
     

@@ -28,6 +28,11 @@
     display: none;  /* Safari and Chrome */
 }
 
+.description{
+    border: rgb(183, 189, 201) 1px solid;   
+}
+
+
 .description:hover{
     background: rgb(184, 186, 219);
 }
@@ -71,4 +76,8 @@
     .font-btn-minus{
         left: 5vw;
     }
+  }
+
+  .keyColor{
+      color: rgb(36, 78, 156);
   }
