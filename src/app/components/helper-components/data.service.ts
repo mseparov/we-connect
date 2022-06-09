@@ -15,6 +15,7 @@ export class DataService{
     public darkModeChange = new BehaviorSubject<boolean>(false);
     public isLoggedIn = new BehaviorSubject<boolean>(false);
     public fireStoreData = new BehaviorSubject<boolean>(false);
+    public voiceRecognitionData = new BehaviorSubject<string>("");
 
     setDarkModeChange(selection: any){
       this.darkModeChange.next(selection);
@@ -26,6 +27,10 @@ export class DataService{
 
 setFireStoreData(selection: any){
   this.fireStoreData.next(selection);
+}
+
+setVoiceRecognitionData(selection: any){
+  this.voiceRecognitionData.next(selection);
 }
 
   

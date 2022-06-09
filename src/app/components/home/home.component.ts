@@ -4,11 +4,13 @@ import { appendFile } from 'fs';
 import { Observable } from 'rxjs';
 import { DataService } from '../helper-components/data.service';
 import Speech from 'speak-tts';
+import { VoiceRecognitionService } from '../../services/voice-recognition.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [VoiceRecognitionService]
 })
 export class HomeComponent implements OnInit {
 
@@ -19,7 +21,12 @@ export class HomeComponent implements OnInit {
 
   fontSize = 22;
 
-  constructor(private firestore: AngularFirestore, private firestoreData: DataService) {
+  voiceRecognitionData = "";
+  currentJob = 1;
+
+  subscription:any = {};
+
+  constructor(private firestore: AngularFirestore, private data: DataService, public voiceRecognition : VoiceRecognitionService) {
 
     this.speech = new Speech() // will throw an exception if not browser supported
 
@@ -55,14 +62,46 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     // get firestore data from data.service and put it into a local array
-    this.firestoreData.fireStoreData.subscribe((data)=>{
+    this.data.fireStoreData.subscribe((data)=>{
       
       this.jobs = data;
 
     });
     console.log(this.jobs);
 
+
+    // voice recognition logic
+    this.subscription = this.data.voiceRecognitionData.subscribe((data)=>{
+      this.voiceRecognitionData = data;
+      // console.log("Voice recognition data: ", this.voiceRecognitionData)
+      if(/^\d+$/.test(data) && parseInt(data) <= this.jobs.length && parseInt(data) > 0){
+        this.currentJob = parseInt(data);
+        this.speakVoiceRecog();
+        console.log("First Condition");
+      }
+      else if(data == "next" && this.currentJob < this.jobs.length && this.currentJob > 0){
+        this.currentJob += 1;
+        this.speakVoiceRecog();
+        console.log("Second Condition");
+      }
+      else if(data == "previous" && this.currentJob <= this.jobs.length && this.currentJob > 1){
+        this.currentJob -= 1;
+        this.speakVoiceRecog();
+        console.log("Third Condition");
+      }
+      else if(data == "repeat" || data == "again" && this.currentJob <= this.jobs.length && this.currentJob > 0){
+        this.speakVoiceRecog();
+        console.log("Fourth Condition");
+      }
+
+      if(data == "stop"){
+        window.location.reload();
+      }
+
+    })
+
   }
+
 
   speak(description:any, data:any){
 
@@ -75,6 +114,20 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  speakVoiceRecog(){
+    let currentJob = this.currentJob - 1;
+    let job = this.jobs[currentJob];
+    console.log(job)
+    this.speech.speak({
+      text: "Job title. " + job.job_title + "." + 
+      "Job description. " + job.job_description + "." +
+      "Company name. " + job.company_name + "." +
+      "Company email. " + job.company_email + "." +
+      "Company phone. " + job.company_phone + "." +
+      "Date posted. " + job.timestamp + "."
+    })
+  }
+
   IncreaseFontSize() {
     if(this.fontSize<42)
     this.fontSize += 2;
@@ -84,5 +137,16 @@ export class HomeComponent implements OnInit {
     this.fontSize -=2;
    }
 
-  
+   startService(){
+    this.voiceRecognition.start();
+  }
+  stopService(){
+    this.voiceRecognition.stop();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+    this.data.setVoiceRecognitionData("");
+}
+
 }

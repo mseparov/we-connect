@@ -3,6 +3,7 @@ import { RouterOutlet } from "@angular/router";
 import { DataService } from "./components/helper-components/data.service";
 import {Router} from "@angular/router";
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { VoiceRecognitionService } from 'src/app/services/voice-recognition.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,9 @@ export class AppComponent implements OnInit{
     // default dark (false) or light mode (true)
     darkModeCheck:boolean = true;
 
-    constructor(private data: DataService, private router: Router, private firestore: AngularFirestore){ 
+    constructor(private data: DataService, private router: Router, private firestore: AngularFirestore, public voiceRecognition : VoiceRecognitionService){ 
+      this.voiceRecognition.init();
+      this.voiceRecognition.start();
     }
   
     ngOnInit(){

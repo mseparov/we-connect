@@ -20,8 +20,8 @@
 
 .jobs{
     background-color: rgb(207, 208, 235);
-    width: 60vw;
-    word-break: break-all;
+    width: 80vw;
+    word-wrap: break-word;
 }
 
 .jobs-container::-webkit-scrollbar { 
