@@ -37,6 +37,7 @@ export class JobPostingComponent implements OnInit {
       }).then(()=>{
         alert("Job posted!");
         console.log("Job posted!");
+        window.location.reload();
       }).catch((e:any)=>{
         alert("Something went wrong...");
       })

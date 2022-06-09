@@ -98,6 +98,13 @@ export class HomeComponent implements OnInit {
         window.location.reload();
       }
 
+      if(data == "bigger"){
+        this.IncreaseFontSize();
+      }
+      if(data == "smaller"){
+        this.DecreaseFontSize();
+      }
+
     })
 
   }
