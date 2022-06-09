@@ -125,6 +125,10 @@ export class HomeComponent implements OnInit {
       "Company email. " + job.company_email + "." +
       "Company phone. " + job.company_phone + "." +
       "Date posted. " + job.timestamp + "."
+    }).then(()=>{
+      console.log("Success!");
+    }).catch((e:any)=>{
+      console.error("An error occurred: ", e);
     })
   }
 
