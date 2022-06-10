@@ -14,3 +14,6 @@ Frontend - Layout, Design, Home page, Job posting page, Sign up and Login pages,
 Data service, Firebase service, Accessibility tools.
 Backend - Authentication, Authentication Guard, Signup, Login, Firebase setup, Job posting, Job getting.
 Aditional - Netlify Deploy, Github Versioning, Documentation (my part), Video (my part).
+
+Magdalena Krajinović:
+(TBD)
