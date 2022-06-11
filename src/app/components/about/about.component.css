@@ -1,0 +1,90 @@
+.main-container-about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 93vh;
+    background-color: rgb(232, 235, 248);
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+.works-container{
+    background-color: rgb(219, 198, 229);
+    border-radius: 20px;
+    border: 2px solid rgb(154, 159, 167);
+    overflow: scroll;
+}
+
+/* .works{
+    background-color: rgb(207, 208, 235);
+    width: 60vw;
+    word-break: break-all;
+} */
+
+.connect{
+    border-radius: 50%;
+}
+
+.h2{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: darkmagenta;
+    text-shadow: 2px 2px 5px black;
+    font-family: Arial, Helvetica, sans-serif;
+    
+
+}
+.footer {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+  }
+
+.para1{
+    text-indent: 50px;
+    font-size: 20px;
+    margin-top: 120px;
+    margin-left: 150px;
+    margin-right: 100px;
+    font-weight: normal;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* .pomoc{
+    border-radius: 8px;
+    margin: 25px;
+} */
+
+.para2{
+    text-indent: 50px;
+    margin: 25px;
+    font-weight: lighter;
+    font-size: 15px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sponzori{
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logospon{
+    float: inline-start;
+    width: 50px;
+    height: 50px;
+}
+
+.works-container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+.h4{
+    text-indent: 50px;
+}
+
+
+    
+    
