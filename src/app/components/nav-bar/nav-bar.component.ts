@@ -63,6 +63,7 @@ export class NavBarComponent implements OnInit {
     console.log(this.data.isLoggedIn.value)
     console.log("Logged out.")
     this.router.navigate(["/home"])
+    window.location.reload();
   }
 
 }

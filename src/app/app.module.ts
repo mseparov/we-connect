@@ -22,6 +22,7 @@ import { AuthGuard } from './components/routing/auth.guard';
 import { JobPostingComponent } from './components/job-posting/job-posting.component';
 import { getFirestore } from 'firebase/firestore';
 import { environment } from 'src/environments/environment';
+import { ChatComponent } from './components/chat/chat.component';
 
 
 const appRoutes: Routes = [
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     LoginComponent,
     ForumComponent,
     JobPostingComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule, 

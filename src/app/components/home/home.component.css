@@ -3,8 +3,8 @@
     flex-direction: column;
     justify-content: top;
     align-items: center;
-    width: 90vw;
-    height: 93vh;
+    width: 100vw;
+    height: 94vh;
     background-color: rgb(232, 235, 248);
     border-radius: 5px;
     text-align: center;
@@ -12,15 +12,22 @@
 }
 
 .jobs-container{
+    position: relative;
+    right: 14.5vw !important;
     background-color: rgb(146, 140, 180);
     border-radius: 15px;
     border: 2px solid rgb(154, 159, 167);
     overflow: scroll;
 }
 
+.chat{
+    position: absolute;
+    right: 29vw;
+}
+
 .jobs{
     background-color: rgb(207, 208, 235);
-    width: 80vw;
+    width: 70vw;
     word-wrap: break-word;
 }
 
@@ -41,7 +48,7 @@
     background-color: rgb(220, 221, 238);
     position: absolute;
     top: 5px;
-    left: 8vw;
+    left: 4vw;
     z-index: 99;
     width: 50px;
     height: 40px;
@@ -53,7 +60,7 @@
     background-color: rgb(220, 221, 238);
     position: absolute;
     top: 5px;
-    left: 5vw;
+    left: 1vw;
     z-index: 99;
     width: 50px;
     height: 40px;

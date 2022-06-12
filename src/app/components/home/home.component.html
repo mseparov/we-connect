@@ -1,9 +1,13 @@
+<div class="font-size">    
+    <button class="font-btn-plus" (click)="IncreaseFontSize()">+</button>
+    <button class="font-btn-minus" (click)="DecreaseFontSize()">-</button>
+</div>
+
 <div class="main-container-home">
    
-    <div class="jobs-container">
+    <app-chat class="chat"></app-chat>
 
-        <button class="font-btn-plus" (click)="IncreaseFontSize()">+</button>
-        <button class="font-btn-minus" (click)="DecreaseFontSize()">-</button>
+    <div class="jobs-container">
 
         <div class="jobs" [ngStyle]="{'font-size.px':fontSize}" *ngFor="let job of jobs">
 

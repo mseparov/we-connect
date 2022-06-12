@@ -1,0 +1,17 @@
+<div class="chat-container" #content>
+    <h3 class="title">Chat</h3>
+     <div *ngFor="let message of messages" class="message" #messages>
+    
+          <h5 *ngIf="message.data.email == currentUser" style="color: rgb(8, 120, 0)">{{message.data.email}}:</h5>
+          <h5 *ngIf="message.data.email != currentUser">{{message.data.email}}:</h5> &nbsp;&nbsp;
+
+          <h5 class="value">{{message.data.value}}</h5> &nbsp;&nbsp;&nbsp;&nbsp;
+         
+          <h5 class="time" style="color: rgb(18, 83, 156)">{{message.data.sent_at}}</h5>
+       
+    </div>
+<form class="chatBox" action="" autocomplete="off">
+      <input v-model="inputMessage" [(ngModel)]="inputMessage" class="input" type="text" id="sendBar" placeholder="Send Message..." aria-label="Send">
+      <button class="send_button" (click)="pushMessages()">Send</button>
+    </form>
+</div> 

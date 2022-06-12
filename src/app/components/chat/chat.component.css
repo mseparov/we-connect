@@ -1,0 +1,90 @@
+.chat-container{
+    position: absolute;
+    background-color: rgb(240, 242, 250);
+    overflow: scroll;
+    padding: 0;
+    height: 85vh;
+    border-radius: 5px;
+    margin-top: 5vh;
+}
+    
+.title{
+    position: fixed;
+    top: 45px;
+    border-radius: 2px;
+    height: 5vh;
+    width: 28.4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 2px rgb(186, 175, 209) solid;
+    background-color: rgb(209, 208, 236);
+}
+    
+.value{
+    font-weight: bold;
+    word-break: break-all;
+}
+    
+.message{
+    display: flex;
+    border: 2px rgb(175, 181, 209) solid;
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1.3rem;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 28vw;
+    word-break: break-all;
+}
+    
+.send_button{
+    border-radius: 5px;
+    background-color: rgb(211, 230, 241);
+    border: 1px rgb(95, 95, 95) solid;
+    width: 2.5vw;
+    height: 2.4vh;
+}
+.send_button:hover{
+    cursor: pointer;
+}
+    
+.chatBox{
+    display: flex;
+    position: fixed;
+    width:27.8vw;
+    z-index: 99;
+    padding: 10px;
+    background:rgb(229, 226, 245) !important;
+    border-radius: 5px;
+    bottom: 18px;
+    z-index: 99;
+    border: 1px rgb(95, 95, 95) solid;
+}
+
+.input{
+    width: 25vw;
+    height: 2vh;
+}
+    
+    /* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+    
+    /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+    
+    /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+    
+    /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
